@@ -1,0 +1,26 @@
+.my-button {
+  background: linear-gradient(297.94deg, #fc2a67 5.45%, #ffa242 122.26%);
+  border-radius: 45px;
+  height: 45px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 25px;
+  color: white;
+  font-weight: 600;
+  &:hover {
+    background: linear-gradient(297.94deg, #ffa242 5.45%, #fc2a67 122.26%);
+  }
+}
+
+.my-button div {
+  margin-right: 12px;
+}
+
+.my-button:disabled,
+.my-button[disabled] {
+  background: #cccccc;
+  color: white;
+  cursor: no-drop;
+}

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bitplay-frontend
+  name: bitplay-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bitplay-frontend
+  template:
+    metadata:
+      labels:
+        app: bitplay-frontend
+    spec:
+      imagePullSecrets:
+        - name: registry-credentials
+      containers:
+        - name: bitplay-frontend
+          # Replace  with your project ID or use `make template`
+          image: registry.gitlab.com/bitplay1/bitplay-frontend:1.0.0-dev
+          # This setting makes nodes pull the docker image every time before
+          # starting the pod. This is useful when debugging, but should be turned
+          # off in production.
+          imagePullPolicy: Always
+          resources:
+            requests:
+              # The proxy's memory use scales linearly with the number of active
+              # connections. Fewer open connections will use less memory. Adjust
+              # this value based on your application's requirements.
+              memory: '500Mi'
+              # The proxy's CPU use scales linearly with the amount of IO between
+              # the database and the application. Adjust this value based on your
+              # application's requirements.
+              cpu: '400m'
+            limits:
+              memory: '500Mi'
+              cpu: '400m'

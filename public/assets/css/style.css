@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Laqonic4FUnicase';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Laqonic4FUnicase'), url('/assets/fonts/Laqonic4FUnicase.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alwyn';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alwyn'), url('/assets/fonts/Alwyn.ttf') format('truetype');
+}
+
+.font-laqonic {
+  font-family: 'Laqonic4FUnicase', sans-serif;
+}
+
+.font-alwyn {
+  font-family: 'Alwyn', sans-serif;
+}
